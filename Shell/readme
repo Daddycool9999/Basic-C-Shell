@@ -1,0 +1,64 @@
+_______________Breifing on basic shell written using C___________
+
+#Compilation:gcc shell.c
+
+#Execution:./a.out
+
+#Input:
+A shell prompt of the form: <username@hostname:curr_dir> with path relative to home(directory where the shell execution is commenced) will appear.
+
+Now enter Semi-colon (;) separated commands.
+
+add '&' at the last of a command to run a process in background(ignored for builtin commands like cd ,echo ,ls , pinfo and pwd).
+
+
+#Process:
+Implements foreground and background processes
+Process name and id with exit status printed when background process terminates.
+
+Type pinfo in the prompt to print: pid,status, memory and executable path (on Linux machines).
+
+#Function in shell.c:
+ls:Implements ls,ls -a,ls -l,ls -al commands.
+
+cd:Implements cd command.
+
+echo:Implements echo command.
+
+pwd:Implements pwd command.
+
+pinfo:Implements pinfo command as described in the assignment.
+
+background:Handles the background processes.
+
+khel,khel1:These functions are used to parse commands and arguments such that they can be recognised and passed  to the required functions in the required format.
+
+bg:Implements bg command.
+
+fg:Implements fg command.
+
+setenv:Implements setenv command.
+
+unsetenv:Implements unsetenv command.
+
+jobs:Print all jobs with their PID and states(Stopped or Running).
+
+kjob:takes the job id of a running job and
+sends a signal value to that process.
+
+overkill : ​ kills all background process at once.
+
+quit ​ : exits the shell. Your shell should exit only if the user types this "quit"
+command. It should ignore any other signal from user like : CTRL-D, CTRL-C,
+SIGINT, SIGCHLD etc.
+
+​CTRL-Z ​ : It should change the status of currently running job to stop, and push it
+in background process.
+ 
+CTRL-C ​ : It should cause a SIGINT signal to be sent to the current foreground job
+of your shell​ . If there is no foreground job, then the signal should not have any
+effect.
+
+
+
+
